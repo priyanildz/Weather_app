@@ -14,7 +14,8 @@ def format_unix_time(timestamp, timezone_offset):
     
 app = Flask(__name__)
 
-API_KEY = os.getenv("OPENWEATHER_API_KEY")
+def get_api_key():
+    return os.getenv("OPENWEATHER_API_KEY", "").strip()
 
 def kelvin_to_celsius(temp_k):
     return round(temp_k - 273.15, 2)
@@ -25,12 +26,14 @@ def index():
     if request.method == 'POST':
         city = request.form.get('city')
         if city:
-            if not API_KEY:
+            api_key = get_api_key()
+            if not api_key:
                 weather_data = {"error": "Missing OPENWEATHER_API_KEY in .env"}
                 return render_template("index.html", weather=weather_data)
 
-            url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}"
-            response = requests.get(url)
+            url = "https://api.openweathermap.org/data/2.5/weather"
+            params = {"q": city, "appid": api_key}
+            response = requests.get(url, params=params, timeout=10)
             data = response.json()
             
             if response.status_code == 200:
@@ -43,6 +46,8 @@ def index():
                     "humidity": data["main"]["humidity"],
                     "icon": data["weather"][0]["icon"]
                 }
+            elif response.status_code == 401:
+                weather_data = {"error": "OpenWeather rejected the API key. Check that the key is active and copied exactly from your OpenWeather account."}
             else:
                 weather_data = {"error": data.get("message", "API Error")}
     return render_template("index.html", weather=weather_data)
