@@ -67,7 +67,6 @@ It focuses on simplicity, performance, and clarity — delivering accurate weath
 |----------|-----------|
 | Backend | <img src="https://img.icons8.com/color/20/python.png"/> Python |
 | Framework | <img src="https://img.icons8.com/ios-filled/20/000000/flask.png"/> Flask |
-<!-- | Templating | <img src="https://img.icons8.com/ios-filled/20/code.png"/> Jinja2 | -->
 | Styling | <img src="https://img.icons8.com/color/20/css3.png"/> CSS |
 | API | <img src="https://img.icons8.com/color/20/cloud.png"/> OpenWeatherMap |
 | Environment | <img src="https://img.icons8.com/color/20/settings.png"/> python-dotenv |
@@ -75,6 +74,7 @@ It focuses on simplicity, performance, and clarity — delivering accurate weath
 | Hosting | <img src="https://img.icons8.com/color/20/cloud.png"/> Render |
 
 </div>
+<!-- | Templating | <img src="https://img.icons8.com/ios-filled/20/code.png"/> Jinja2 | -->
 
 ---
 
