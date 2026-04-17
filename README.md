@@ -1,4 +1,4 @@
-<!-- <div align="center">
+<div align="center">
 
 # <img src="https://img.icons8.com/fluency/48/partly-cloudy-day.png" width="36"/> Weather App
 
@@ -213,9 +213,9 @@ This project is licensed under the [MIT License](LICENSE).
 
 Made with <img src="https://img.icons8.com/fluency/16/like.png"/> by [priyanildz](https://github.com/priyanildz)
 
-</div> -->
+</div>
 
-
+<!-- 
 <div align="center">
 
 # <img src="https://img.icons8.com/fluency/48/partly-cloudy-day.png" width="36"/> Weather App
@@ -469,4 +469,4 @@ Made with ❤️ by [priyanildz](https://github.com/priyanildz)
 
 ⭐ If you found this useful, consider giving the repo a star!
 
-</div>
+</div> -->
